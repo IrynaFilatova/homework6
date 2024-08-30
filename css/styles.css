@@ -216,16 +216,21 @@ img { display: block;}
  /* #region Feautures */
 
 .section-features {
- background-color: #fff;
- padding: 120px 0;
- max-width: 1440px;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 96px;
+  background-color: #fff;
+ /* padding: 120px 0;
+ max-width: 1440px; */
 }
 
 .feature-menu {
  display: flex;
- gap: 24px; 
+ flex-wrap: wrap;
+ /* gap: 24px; 
  margin-left: 0;
- margin-right: 0;
+ margin-right: 0; */
 }
 
 .feature-item {
