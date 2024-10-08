@@ -58,32 +58,38 @@ button {
 
 .container {
   max-width: 320px;
-  /* max-width: 1158px; */
   padding: 0 16px;
   margin: 0 auto;
 }
 
-/* ===========#endregion base============= */
-
-/* ===========#region header ============*/
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
 }
 
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+}
+
+/* ===========#endregion base======================= */
+
+/* ===========#region header =========================*/
+
 .header {
-  padding: 16px 0;
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 2px 1px 0 rgba(46, 47, 66, 0.08);
 }
 
-.header-nav {
+.header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-
 .header-logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -94,82 +100,10 @@ button {
   color: #4d5ae5;
   display: block;
   padding: 16px 0;
-  /* padding: 24px 0; 
- margin-right: 76px; */
 }
+
 .header-logo-span {
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.17;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
   color: #2e2f42;
-}
-
-.nav-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.contacts-list {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.nav-link {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  padding: 24px 0;
-  display: block;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link-psevdo {
-  position: relative;
-  color: #404bbf;
-}
-
-.link-psevdo::after {
-  content: "";
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: #404bbf;
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-}
-
-.contacts-link,
-.contacts {
-  font-style: normal;
-  font-weight: 400;
-  /* font-size: 16px; */
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-}
-
-.contacts-link {
-  /* padding: 24px 0; */
-  display: block;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts {
-  margin-left: auto;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.contacts-link:hover,
-.contacts-link:focus {
-  color: #404bbf;
 }
 
 .nav-list,
@@ -187,14 +121,111 @@ button {
   fill: #2e2f37;
 }
 
-/* #endregion Header */
+@media screen and (min-width: 768px) {
+  .open-menu-btn {
+    display: none;
+  }
 
-/* #region Hero */
+  .header-logo {
+    padding: 24px 0;
+    margin-right: 120px;
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+  }
+  .nav-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    display: block;
+    padding: 24px 0;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .link-psevdo {
+    position: relative;
+    color: #404bbf;
+  }
+
+  .link-psevdo::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background-color: #404bbf;
+  }
+  .contacts {
+    font-style: normal;
+    display: block;
+  }
+  .contacts-link {
+    display: block;
+    font-size: 12px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+    color: #434455;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-link:hover,
+  .nav-link:focus,
+  .contacts-link:hover,
+  .contacts-link:focus {
+    color: #404bbf;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .header-logo {
+    margin-right: 76px;
+  }
+
+  .contacts-list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .contacts-link {
+    display: block;
+    padding: 24px 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+  .header-icon-svg {
+    display: none;
+  }
+
+  .open-menu-btn {
+    display: none;
+  }
+}
+/* ===================#endregion Header==================================== */
+
+/*============================== #region Hero ==========================*/
 
 .hero {
   background-color: #2e2f42;
   padding: 72px 0;
-  /* padding: 188px 0; */
   margin: 0 auto;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
@@ -226,7 +257,6 @@ button {
   letter-spacing: 0.02em;
   color: white;
   /* max-width: 496px; */
-  max-height: 120px;
   text-align: center;
   margin-bottom: 72px;
   /* margin-bottom: 48px; */
@@ -234,13 +264,12 @@ button {
 
 .hero-button {
   display: block;
-  cursor: pointer;
-  background-color: #4d5ae5;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #ffffff;
+  background-color: #4d5ae5;
   min-width: 169px;
   height: 56px;
   border: none;
@@ -254,9 +283,84 @@ button {
   background-color: #404bbf;
 }
 
-/* #endregion Hero */
+@media screen and (min-width: 768px) {
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dpx),
+    (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/img-hero-pad-1x.jpg);
+    }
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dpx),
+    (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/img-hero-pad-2x.jpg);
+    }
+  }
 
-/* #region Feautures */
+  .hero {
+    padding: 112px;
+  }
+  .hero-title {
+    font-size: 56px;
+    line-height: 1.07;
+    margin-bottom: 36px;
+  }
+
+  .hero-title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    color: white;
+    max-width: 496px;
+    max-height: 120px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+  }
+}
+@media screen and (min-width: 1158px) {
+  .hero {
+    padding: 188px 0;
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dpx),
+    (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/img-hero-pad-1x.jpg);
+    }
+  }
+
+  @media screen and (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 2dpx),
+    (min-resolution: 192dpi) {
+    .hero {
+      background-image: linear-gradient(
+          rgba(46, 47, 66, 0.7),
+          rgba(46, 47, 66, 0.7)
+        ),
+        url(../images/img-hero-pad-2x.jpg);
+    }
+  }
+}
+/*=========================== #endregion Hero========================== */
+
+/*============================== #region Feautures============================ */
 
 .section-features {
   padding-top: 96px;
@@ -419,9 +523,9 @@ button {
   background-color: #404bbf;
 }
 
-/* #endregion Our Team */
+/*=========================== #endregion Our Team======================= */
 
-/* #region Portfolio */
+/*======================= #region Portfolio=============================== */
 
 .portfolio-section {
   background-color: #f4f4fd;
@@ -504,9 +608,9 @@ button {
   letter-spacing: 0.02em;
   color: #434455;
 }
-/* #endregion Portfolio */
+/*================================= #endregion Portfolio */
 
-/* #region Footer */
+/*==================================== #region Footer */
 
 .footer-section {
   background-color: #2e2f42;
@@ -641,9 +745,9 @@ button {
   margin-left: 16px;
   fill: #fff;
 }
-/* #endregion Footer */
+/*========================== #endregion Footer================ */
 
-/* #region Modal */
+/*========================== #region Modal================== */
 .backdrop {
   background: rgba(46, 47, 66, 0.4);
   position: fixed;
@@ -850,262 +954,84 @@ button {
   background-color: #404bbf;
 }
 
-/* #endregion Modal */
+/*============== #endregion Modal=================== */
 
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
+.section-features {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
 
-  .header-container {
-    padding: 0 16px;
-  }
-  .header-logo {
-    margin-right: 120px;
-  }
+.feature-menu {
+  display: flex;
+  flex-wrap: wrap;
+}
 
-  .nav-list {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-  }
+.feature-list-item {
+  width: calc((100% - 72px) / 2);
+}
 
-  .contacts-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
+.team-section {
+  padding: 96px 0;
+}
 
-  .nav-link {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #2e2f42;
-    display: block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 64px;
+  column-gap: 24px;
+}
+.team-member-list {
+  width: calc((100% - 24px) / 2);
+}
 
-  .link-psevdo {
-    position: relative;
-    color: #404bbf;
-  }
+/*=================== media rules for desktop=============== */
 
-  .link-psevdo::after {
-    content: "";
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background-color: #404bbf;
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-  }
+/*=============== start hero section for desktop============== */
 
-  .contacts-link,
-  .contacts {
-    display: block;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: #434455;
-  }
+/*================ section features================ */
+.section-features {
+  padding: 120px 0;
+  max-width: 1440px;
+}
+.feature-div-svg {
+  width: 264px;
+  height: 112px;
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  background-color: #f4f4fd;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .contacts-link {
-    padding: 16px 0;
-    display: block;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
+.feature-menu {
+  gap: 24px;
+  margin-left: 0;
+  margin-right: 0;
+}
+.feature-item {
+  font-weight: 500;
+  font-size: 20px;
+}
+.feature-list-item {
+  width: calc((100% - 72px) / 4);
+}
+.feature-text {
+  font-weight: 400;
+}
+/*=================== end features section rules for desktop============ */
 
-  .contacts {
-    margin-left: auto;
-  }
+/*  ===========start our team section for desktop=========== */
 
-  .nav-link:hover,
-  .nav-link:focus,
-  .contacts-link:hover,
-  .contacts-link:focus {
-    color: #404bbf;
-  }
+.team-member-list {
+  width: calc((100% - 72px) / 4);
+}
 
-  .open-menu-btn {
-    display: none;
-  }
-
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 2dpx),
-    (min-resolution: 192dpi) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/img-hero-pad-1x.jpg);
-    }
-  }
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 2dpx),
-    (min-resolution: 192dpi) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/img-hero-pad-2x.jpg);
-    }
-  }
-
-  .hero {
-    padding: 112px;
-  }
-  .hero-title {
-    font-size: 56px;
-    line-height: 1.07;
-    margin-bottom: 36px;
-  }
-
-  .section-features {
-    padding-top: 96px;
-    padding-bottom: 96px;
-  }
-
-  .feature-menu {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .feature-list-item {
-    width: calc((100% - 72px) / 2);
-  }
-
-  .team-section {
-    padding: 96px 0;
-  }
-
-  .team-list {
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 64px;
-    column-gap: 24px;
-  }
-  .team-member-list {
-    width: calc((100% - 24px) / 2);
+@media screen and (min-width: 768px) and (max-width: 1158px) {
+  .team-section > .container {
+    max-width: 732px;
   }
 }
 
-/* media rules for desktop */
-
-@media screen and (min-width: 1158px) {
-  .container {
-    max-width: 1158px;
-    padding: 0 15px;
-  }
-
-  /* section header */
-
-  .header-logo {
-    padding: 24px 0;
-    margin-right: 76px;
-  }
-
-  .header-icon-svg {
-    display: none;
-  }
-
-  .open-menu-btn {
-    display: none;
-  }
-
-  /* start hero section for desktop */
-
-  .hero-title {
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 1.07;
-    letter-spacing: 0.02em;
-    color: white;
-    max-width: 496px;
-    max-height: 120px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 48px;
-  }
-
-  .hero {
-    padding: 188px 0;
-  }
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 2dpx),
-    (min-resolution: 192dpi) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/img-hero-pad-1x.jpg);
-    }
-  }
-
-  @media screen and (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 2dpx),
-    (min-resolution: 192dpi) {
-    .hero {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url(../images/img-hero-pad-2x.jpg);
-    }
-  }
-
-  /* section features */
-  .section-features {
-    padding: 120px 0;
-    max-width: 1440px;
-  }
-  .feature-div-svg {
-    width: 264px;
-    height: 112px;
-    border-radius: 4px;
-    border: 1px solid #8e8f99;
-    background-color: #f4f4fd;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .feature-menu {
-    gap: 24px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .feature-item {
-    font-weight: 500;
-    font-size: 20px;
-  }
-  .feature-list-item {
-    width: calc((100% - 72px) / 4);
-  }
-  .feature-text {
-    font-weight: 400;
-  }
-  /* end features section rules for desktop */
-
-  /*  start our team section for desktop */
-
-  .team-member-list {
-    width: calc((100% - 72px) / 4);
-  }
-
-  @media screen and (min-width: 768px) and (max-width: 1158px) {
-    .team-section > .container {
-      max-width: 732px;
-    }
-  }
-
-  /* end our team section for desktop */
-}
+/*=================== end our team section for desktop=========== */
