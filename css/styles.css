@@ -728,7 +728,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 48px;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .box {
@@ -772,11 +771,10 @@ button {
   background-color: #4d5ae5;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.portfolio-list-item:hover {
-  cursor: pointer;
+.portfolio-list-item {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-list-item:hover .overlay-portfolio-text {
@@ -788,7 +786,6 @@ button {
     flex-wrap: wrap;
     gap: 24px;
     row-gap: 72px;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .portfolio-list-item {
     width: calc((100% - 24px) / 2);
@@ -805,6 +802,11 @@ button {
 
   .portfolio-list-item {
     width: calc((100% - 48px) / 3);
+  }
+  .portfolio-list:hover {
+    cursor: pointer;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   }
 }
 /* ========= END PORTFOLIO SECTION============ */

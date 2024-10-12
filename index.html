@@ -49,15 +49,15 @@
             </li>
           </ul>
         </address>
-        <button type="button" class="open-menu-btn">
+        <button type="button" class="open-menu-btn" data-menu-open>
           <svg class="header-icon-svg" width="24" height="24">
             <use href="./images/icons.svg#open-menu-icon"></use>
           </svg>
         </button>
       </div>
-      <div class="mobile-menu">
+      <div class="mobile-menu" data-menu>
         <div class="container mobile-menu-container">
-          <button type="button" class="mobile-close-btn">
+          <button type="button" class="mobile-close-btn" data-menu-close>
             <svg class="close-item" width="8" height="8">
               <use href="./images/icons.svg#icon-close"></use>
             </svg>
@@ -150,7 +150,9 @@
       <section class="hero">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
-          <button class="hero-button" type="button">Order Service</button>
+          <button class="hero-button" type="button" data-modal-open>
+            Order Service
+          </button>
         </div>
       </section>
       <!-- End hero -->
@@ -447,9 +449,9 @@
             <li class="portfolio-list-item">
               <div class="box">
                 <img
-                  srcset="./images/img-meditation-2x.jpg"
+                  srcset="./images/img2.jpg 2x"
                   class="app-image"
-                  src="./images/img-meditation-1x.jpg"
+                  src="./images/img1.jpg"
                   alt="Laptop and a smartphone"
                   width="360"
                 />
@@ -615,9 +617,9 @@
 
     <!-- Modal overlay start -->
 
-    <div class="modal-overlay">
+    <div class="modal-overlay" data-modal>
       <div class="modal">
-        <button type="button" class="modal-close-btn">
+        <button type="button" class="modal-close-btn" data-modal-close>
           <svg class="close-item" width="8" height="8">
             <use href="./images/icons-modal.svg#icon-close"></use>
           </svg>
@@ -702,5 +704,7 @@
       </div>
     </div>
     <!-- Modal overlay end -->
+    <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
   </body>
 </html>
