@@ -37,6 +37,9 @@ button {
   cursor: pointer;
 }
 
+textarea {
+  resize: none;
+}
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -356,18 +359,23 @@ button {
 /*============================== #region Hero ==========================*/
 
 .hero {
-  background-color: #2e2f42;
   padding: 72px 0;
+  max-width: 320px;
   margin: 0 auto;
+}
+
+.hero {
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
     url(../images/img-hero-mob-1x.jpg);
+  background-color: #2e2f42;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
 @media screen and (-webkit-min-device-pixel-ratio: 2),
   (min-resolution: 2dpx),
   (min-resolution: 192dpi) {
@@ -388,6 +396,8 @@ button {
   max-width: 216px;
   color: white;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 72px;
 }
 
@@ -399,7 +409,6 @@ button {
   letter-spacing: 0.04em;
   color: #ffffff;
   background-color: #4d5ae5;
-  min-width: 169px;
   height: 56px;
   border: none;
   border-radius: 4px;
@@ -438,31 +447,20 @@ button {
 
   .hero {
     padding: 112px 0;
+    min-width: 768px;
   }
   .hero-title {
     font-size: 56px;
     line-height: 1.07;
     margin-bottom: 36px;
-  }
-
-  .hero-title {
-    font-weight: 700;
-    font-size: 56px;
-    line-height: 1.07;
-    color: white;
     max-width: 496px;
-    max-height: 120px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 36px;
   }
 }
 
 @media screen and (min-width: 1158px) {
   .hero {
     padding: 188px 0;
-    width: 1440px;
+    max-width: 1440px;
   }
 
   @media screen and (-webkit-min-device-pixel-ratio: 2),
@@ -473,7 +471,7 @@ button {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../images/img-hero-pad-1x.jpg);
+        url(../images/img-hero-1x.jpg);
     }
   }
 
@@ -485,7 +483,7 @@ button {
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
         ),
-        url(../images/img-hero-pad-2x.jpg);
+        url(../images/img-hero-2x.jpg);
     }
   }
   .hero-title {
@@ -552,7 +550,6 @@ button {
 @media screen and (min-width: 1158px) {
   .section-features {
     padding: 120px 0;
-    width: 1440px;
   }
 
   .feature-menu {
@@ -735,8 +732,6 @@ button {
 
 .portfolio-container {
   padding: 32px 16px;
-  border: 1px solid #e7e9fc;
-  border-top: none;
 }
 .portfolio-menu {
   font-weight: 500;
@@ -769,12 +764,13 @@ button {
   background-color: #4d5ae5;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.portfolio-list-item {
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.portfolio-container {
+  border: 1px solid #e7e9fc;
+  border-top: none;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background-color: #fff;
 }
-
 .portfolio-list-item:hover .overlay-portfolio-text {
   transform: translateY(0);
 }
@@ -788,6 +784,9 @@ button {
   .portfolio-list-item {
     width: calc((100% - 24px) / 2);
   }
+  .portfolio-container {
+    box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  }
 }
 @media screen and (min-width: 1158px) {
   .portfolio-section {
@@ -795,16 +794,19 @@ button {
   }
   .portfolio-list {
     row-gap: 48px;
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .portfolio-list-item {
     width: calc((100% - 48px) / 3);
   }
-  .portfolio-list:hover {
+  .portfolio-container {
+    border: 1px solid #e7e9fc;
+    border-top: none;
+  }
+  .portfolio-list-item:hover {
     cursor: pointer;
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+      0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
   }
 }
 .box > img {
@@ -812,6 +814,7 @@ button {
 }
 /* ========= END PORTFOLIO SECTION============ */
 /* ========================FOOTER========================= */
+
 .footer {
   background-color: #2e2f42;
   padding: 96px 0;
@@ -823,7 +826,9 @@ button {
   align-items: center;
   justify-content: center;
 }
-
+.logo-text {
+  margin-bottom: 72px;
+}
 .footer-logo {
   display: inline-block;
   color: #4d5ae5;
@@ -852,11 +857,11 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   text-align: left;
-  margin-bottom: 72px;
 }
 
 .social-media {
   width: 208px;
+  margin-bottom: 72px;
 }
 
 .footer-social-links {
@@ -879,7 +884,6 @@ button {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 72px;
 }
 
 .link-icon-footer {
@@ -958,12 +962,6 @@ button {
   color: #ffffff;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1157px) {
-  .footer-container {
-    max-width: 584px;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .footer {
     padding: 96px 0;
@@ -1014,6 +1012,10 @@ button {
   .link-icon-footer:focus {
     background-color: #31d0aa;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .logo-text,
+  .social-media {
+    margin-bottom: 0;
   }
 }
 
@@ -1067,12 +1069,11 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 288px;
-  min-height: 623px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background-color: #fcfcfc;
-  padding: 72px 16px 16px 16px;
+  padding: 72px 16px 24px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1085,10 +1086,8 @@ button {
   position: absolute;
   top: 24px;
   right: 24px;
-  width: 24px;
-  height: 24px;
   line-height: 0;
-  padding: 0;
+  padding: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1102,9 +1101,6 @@ button {
 
 .close-item {
   fill: 2e2F42;
-  width: 8px;
-  height: 8px;
-  align-items: center;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1146,39 +1142,37 @@ button {
 }
 .input-container {
   position: relative;
-  margin-bottom: 8px;
 }
 .modal-input {
-  width: 256px;
+  width: 100%;
   height: 40px;
+  font-size: 18px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   background-color: transparent;
-  padding-left: 38px;
+  padding: 10px 10px 10px 33px;
   outline: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-textarea {
-  width: 100%;
+textarea.modal-textarea {
   height: 120px;
   line-height: 1.17;
   font-size: 12px;
   letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  background-color: transparent;
-  border-radius: 4px;
   padding: 8px 16px;
+}
+.modal-textarea {
+  width: 100%;
   outline: transparent;
   resize: none;
+  border-radius: 4px;
+  background-color: transparent;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(46, 47, 66, 0.4);
 }
 .modal-textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
-}
-
-.modal-input:focus + .modal-icon {
-  fill: #4d5ae5;
 }
 
 .modal-icon {
@@ -1190,6 +1184,16 @@ button {
   transform: translateY(-50%);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-input:hover + .modal-icon,
+.modal-input:focus + .modal-icon {
+  fill: #4d5ae5;
+}
+
+.modal-input:hover,
+.modal-input:focus {
+  border-color: #4d5ae5;
+}
+
 .modal-textarea:focus {
   border-color: #4d5ae5;
 }
@@ -1224,9 +1228,6 @@ button {
   align-items: center;
   justify-content: center;
   margin-right: 8px;
-}
-.modal-checkbox-text {
-  width: 231px;
 }
 .checkbox:checked + .custom-label-user-checkbox > .checkbox-span {
   background-color: #404bbf;
@@ -1267,16 +1268,5 @@ button {
 @media screen and (min-width: 768px) {
   .modal {
     width: 408px;
-    min-height: 584px;
-    padding: 72px 24px 24px 24px;
-  }
-  .modal-text {
-    width: 360px;
-  }
-  .custom-label-user-checkbox {
-    align-items: baseline;
-  }
-  .modal-checkbox-text {
-    width: 338px;
   }
 }
